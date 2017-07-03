@@ -1,26 +1,24 @@
-#ifndef TABLEWIDGET_H
-#define TABLEWIDGET_H
+#ifndef FULLTABLE_H
+#define FULLTABLE_H
 
-#include <QWidget>
-#include <QList>
-#include <QPoint>
+#include <QMainWindow>
 
 #include "../tableinterface.h"
 
 namespace Ui {
-  class TableWidget;
+  class FullTable;
 }
 
 #define NB_COLUMN 20
 #define NB_ROW 20
 
-class TableWidget : public QWidget, public TableInterface
+class FullTable : public QMainWindow, public TableInterface
 {
   Q_OBJECT
 
 public:
-  explicit TableWidget(QWidget *parent = 0);
-  ~TableWidget();
+  explicit FullTable(QWidget *parent = 0);
+  ~FullTable();
 
   quint8 GetNbColumn( void ){return NB_COLUMN;}
   quint8 GetNbRow( void ){return NB_ROW;}
@@ -31,10 +29,8 @@ public:
 
   void DrawCircle(quint8 i_column, quint8 i_row, quint8 i_radius, QColor i_color);
 
-
-
 private:
-  Ui::TableWidget *ui;
+  Ui::FullTable *ui;
 };
 
-#endif // TABLEWIDGET_H
+#endif // FULLTABLE_H
