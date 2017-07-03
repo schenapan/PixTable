@@ -29,6 +29,14 @@ public:
 
   void DrawCircle(quint8 i_column, quint8 i_row, quint8 i_radius, QColor i_color);
 
+  /**
+   * @brief DrwHLine : draw an horizontal line from left to right
+   * @param i_column : starting column
+   * @param i_row : starting row
+   * @param i_color : color of the line
+   */
+  void DrwHLine(quint8 i_column, quint8 i_row, quint8 i_length, QColor i_color);
+
 private:
   Ui::FullTable *ui;
 };

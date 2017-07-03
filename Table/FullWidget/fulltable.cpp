@@ -80,3 +80,26 @@ void FullTable::DrawCircle(quint8 i_column, quint8 i_row, quint8 i_radius, QColo
         }
     }
 }
+
+/**
+ * @brief DrwHLine : draw an horizontal line from left to right
+ * @param i_column : starting column
+ * @param i_row : starting row
+ * @param i_length : length of the line if possible, if not stop at the border of table
+ * @param i_color : color of the line
+ */
+void FullTable::DrwHLine(quint8 i_column, quint8 i_row, quint8 i_length, QColor i_color)
+{
+  // compute real length
+  quint8 l_length = i_length;
+
+  if( (i_column+l_length) > NB_COLUMN )
+    {
+      l_length = NB_COLUMN - i_column;
+    }
+
+  for( int loop=0; loop<l_length; loop++ )
+    {
+      SetPixel(i_column +loop, i_row, i_color);
+    }
+}
