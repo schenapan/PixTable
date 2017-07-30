@@ -37,6 +37,43 @@ public:
    */
   void DrwHLine(quint8 i_column, quint8 i_row, quint8 i_length, QColor i_color);
 
+  /**
+   * @brief DrwVLine : draw vertical line from up to down
+   * @param i_column : starting column
+   * @param i_row : starting line
+   * @param i_length : lenght of the line if possible, if not stop at the border of table
+   * @param i_color : color of the line
+   */
+  void DrwVLine(quint8 i_column, quint8 i_row, quint8 i_length, QColor i_color);
+
+private slots:
+  void on_btnA_pressed();
+
+  void on_btnA_released();
+
+  void on_btnB_pressed();
+
+  void on_btnB_released();
+
+  void on_btnLeft_pressed();
+
+  void on_btnLeft_released();
+
+  void on_btnRight_pressed();
+
+  void on_btnRight_released();
+
+  void on_btnUp_pressed();
+
+  void on_btnUp_released();
+
+  void on_btnDown_pressed();
+
+  void on_btnDown_released();
+
+signals:
+  void SignalControler1( eCtrlButton i_btn, bool i_pressed );
+
 private:
   Ui::FullTable *ui;
 };

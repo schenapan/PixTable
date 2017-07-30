@@ -103,3 +103,86 @@ void FullTable::DrwHLine(quint8 i_column, quint8 i_row, quint8 i_length, QColor 
       SetPixel(i_column +loop, i_row, i_color);
     }
 }
+
+/**
+ * @brief DrwVLine : draw vertical line from up to down
+ * @param i_column : starting column
+ * @param i_row : starting line
+ * @param i_length : lenght of the line if possible, if not stop at the border of table
+ * @param i_color : color of the line
+ */
+void FullTable::DrwVLine(quint8 i_column, quint8 i_row, quint8 i_length, QColor i_color)
+{
+  // compute real length
+  quint8 l_length = i_length;
+
+  if( (i_row+l_length) > NB_ROW )
+    {
+      l_length = NB_ROW - i_row;
+    }
+
+  for( int loop=0; loop<l_length; loop++ )
+    {
+      SetPixel(i_column, i_row + loop, i_color);
+    }
+}
+
+void FullTable::on_btnA_pressed()
+{
+  emit SignalControler1( E_BTN_A, true );
+}
+
+void FullTable::on_btnA_released()
+{
+  emit SignalControler1( E_BTN_A, false );
+}
+
+void FullTable::on_btnB_pressed()
+{
+  emit SignalControler1( E_BTN_B, true );
+}
+
+void FullTable::on_btnB_released()
+{
+  emit SignalControler1( E_BTN_B, false );
+}
+
+void FullTable::on_btnLeft_pressed()
+{
+  emit SignalControler1( E_BTN_LEFT, true );
+}
+
+void FullTable::on_btnLeft_released()
+{
+  emit SignalControler1( E_BTN_LEFT, false );
+}
+
+void FullTable::on_btnRight_pressed()
+{
+  emit SignalControler1( E_BTN_RIGHT, true );
+}
+
+void FullTable::on_btnRight_released()
+{
+  emit SignalControler1( E_BTN_RIGHT, false );
+}
+
+void FullTable::on_btnUp_pressed()
+{
+  emit SignalControler1( E_BTN_UP, true );
+}
+
+void FullTable::on_btnUp_released()
+{
+  emit SignalControler1( E_BTN_UP, false );
+}
+
+void FullTable::on_btnDown_pressed()
+{
+  emit SignalControler1( E_BTN_DOWN, true );
+}
+
+void FullTable::on_btnDown_released()
+{
+  emit SignalControler1( E_BTN_DOWN, false );
+}

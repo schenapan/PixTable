@@ -3,6 +3,18 @@
 
 #include <QObject>
 
+typedef enum
+{
+  E_BTN_A,
+  E_BTN_B,
+  E_BTN_UP,
+  E_BTN_DOWN,
+  E_BTN_LEFT,
+  E_BTN_RIGHT,
+  E_BTN_START,
+  E_BTN_PAUSE
+}eCtrlButton;
+
 class TableInterface
 {
 public:
@@ -22,6 +34,18 @@ public:
    * @param i_color : color of the line
    */
   virtual void DrwHLine(quint8 i_column, quint8 i_row, quint8 i_length, QColor i_color) = 0;
+
+  /**
+   * @brief DrwVLine : draw vertical line from up to down
+   * @param i_column : starting column
+   * @param i_row : starting line
+   * @param i_length : lenght of the line if possible, if not stop at the border of table
+   * @param i_color : color of the line
+   */
+  virtual void DrwVLine(quint8 i_column, quint8 i_row, quint8 i_length, QColor i_color) = 0;
+
+signals:
+  virtual void SignalControler1( eCtrlButton i_btn, bool i_pressed ) = 0;
 };
 
 

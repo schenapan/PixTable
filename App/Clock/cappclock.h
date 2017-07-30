@@ -20,10 +20,12 @@ public slots:
 
 private slots:
   void timer_timeout(void);
+  void SlotControler1( eCtrlButton i_btn, bool i_pressed );
 
 private:
   TableInterface *p_table;
   EAppRunningState app_state;
+  bool color_state;
 };
 
 #endif // CAPPCLOCK_H
