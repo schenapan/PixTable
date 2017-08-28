@@ -14,7 +14,9 @@ TEMPLATE = app
 SOURCES += main.cpp \
     ../Table/FullWidget/fulltable.cpp \
     ../App/Clock/cappclock.cpp \
-    ../App/Test/capptest.cpp
+    ../App/Test/capptest.cpp \
+    ../App/Pong/capppong.cpp \
+    ../App/Pong/cpongball.cpp
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -32,7 +34,9 @@ HEADERS += \
     ../Table/FullWidget/fulltable.h \
     ../App/Clock/cappclock.h \
     ../App/appinterface.h \
-    ../App/Test/capptest.h
+    ../App/Test/capptest.h \
+    ../App/Pong/capppong.h \
+    ../App/Pong/cpongball.h
 
 FORMS += \
     ../Table/FullWidget/fulltable.ui
